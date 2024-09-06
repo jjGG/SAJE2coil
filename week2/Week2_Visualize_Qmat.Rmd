@@ -1,0 +1,52 @@
+---
+title: "Visualize Quantitative Matrix"
+author: "UZH n UU -> what shall we use here for authors"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    toc: true
+  bookdown::html_document2:
+    toc: true
+  pdf_document: 
+    toc: true
+header-includes: 
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhead[CO,CE]{Differential Expression Analysis}
+  \fancyfoot[CO,CE]{\textbf{FGCZ} - www.fgcz.ch - 2018}
+  \fancyfoot[LE,RO]{\thepage} 
+params:
+  grp: NULL
+vignette: >
+  %\VignetteIndexEntry{FGCZ Two-Group Analysis}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+bibliography: bibliography.bib
+editor_options: 
+  chunk_output_type: console
+always_allow_html: true
+---
+
+```{r load libraries, include=FALSE}
+library(readr)
+library(heatmap3)
+```
+
+
+```{r load data, eval=TRUE, include=FALSE}
+fN <- "qmat_1198.txt"
+dat <- read_tsv(fN)
+```
+
+
+
+# Visualize Using Heatmap3
+
+We are using `r fN` to visualize these values as a heatmap. We will do this on raw linear values as well as on $\log_{2}$ transformed values.
+
+
+```{r hmNoTrafo, fig.height=8, fig.width=8, fig.cap="(ref:hmNoTrafo)", eval=TRUE}
+heatmap3(as.matrix(dat[,2:ncol(dat)]), na.rm = TRUE, margins = c(10,1))
+```
+(ref:hmNoTrafo) Shown is the visualization of the quantitative matrix as a heatmap (used here are the linear values)
+
