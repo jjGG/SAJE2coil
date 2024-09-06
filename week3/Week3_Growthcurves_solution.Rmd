@@ -1,0 +1,29 @@
+---
+title: "Differential Expression Analysis Quality Control."
+author: "UZH n UU -> what shall we use here for authors"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    toc: true
+  bookdown::html_document2:
+    toc: true
+  pdf_document: 
+    toc: true
+header-includes: 
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhead[CO,CE]{Differential Expression Analysis}
+  \fancyfoot[CO,CE]{\textbf{FGCZ} - www.fgcz.ch - 2018}
+  \fancyfoot[LE,RO]{\thepage} 
+params:
+  grp: NULL
+vignette: >
+  %\VignetteIndexEntry{FGCZ Two-Group Analysis}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+bibliography: bibliography.bib
+editor_options: 
+  chunk_output_type: console
+always_allow_html: true
+---
+
