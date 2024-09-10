@@ -27,3 +27,4 @@ editor_options:
 always_allow_html: true
 ---
 
+Data online: https://doi.org/10.6084/m9.figshare.23578086.v1

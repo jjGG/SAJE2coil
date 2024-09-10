@@ -10,17 +10,12 @@ output:
   pdf_document: 
     toc: true
 header-includes: 
+  \usepackage{caption}
   \usepackage{fancyhdr}
   \pagestyle{fancy}
-  \fancyhead[CO,CE]{Differential Expression Analysis}
-  \fancyfoot[CO,CE]{\textbf{FGCZ} - www.fgcz.ch - 2018}
+  \fancyhead[CO,CE]{COIL COURSE 2024 - 2024}
+  \fancyfoot[CO,CE]{\textbf{FGCZ} - www.fgcz.ch - 2024}
   \fancyfoot[LE,RO]{\thepage} 
-params:
-  grp: NULL
-vignette: >
-  %\VignetteIndexEntry{FGCZ Two-Group Analysis}
-  %\VignetteEncoding{UTF-8}
-  %\VignetteEngine{knitr::rmarkdown}
 bibliography: bibliography.bib
 editor_options: 
   chunk_output_type: console
@@ -46,7 +41,7 @@ We are using `r fN` to visualize these values as a heatmap. We will do this on r
 
 
 ```{r hmNoTrafo, fig.height=8, fig.width=8, fig.cap="(ref:hmNoTrafo)", eval=TRUE}
-heatmap3(as.matrix(dat[,2:ncol(dat)]), na.rm = TRUE, margins = c(10,1))
+heatmap3(as.matrix(dat[,2:ncol(dat)]), na.rm = TRUE, margins = c(10,3))
 ```
 (ref:hmNoTrafo) Shown is the visualization of the quantitative matrix as a heatmap (used here are the linear values)
 
