@@ -32,8 +32,6 @@ str(data)
 
 data$Time <- round(data$Time, 2)
 # data <- data |> filter(Experiment == "exp2" & Growth_Medium == "SN" | Experiment == "exp4" & Growth_Medium == "SN")
-# data <- data |> filter(Experiment == "exp2")
-# data <- data |> filter(Replicate == 1)
 
 # write new input for students
 write_tsv(x = data, file = "JE_growth_final.txt")
