@@ -3,23 +3,9 @@ title: "Visualize Quantitative Matrix"
 author: "UZH n UU -> what shall we use here for authors"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
-  html_document:
-    toc: true
-  bookdown::html_document2:
-    toc: true
-  pdf_document: 
-    toc: true
-header-includes: 
-  \usepackage{caption}
-  \usepackage{fancyhdr}
-  \pagestyle{fancy}
-  \fancyhead[CO,CE]{COIL COURSE 2024 - 2024}
-  \fancyfoot[CO,CE]{\textbf{FGCZ} - www.fgcz.ch - 2024}
-  \fancyfoot[LE,RO]{\thepage} 
+  bookdown::html_document2: default
+  bookdown::pdf_document2: default
 bibliography: bibliography.bib
-editor_options: 
-  chunk_output_type: console
-always_allow_html: true
 ---
 
 ```{r load libraries, include=FALSE}
@@ -37,11 +23,20 @@ dat <- read_tsv(fN)
 
 # Visualize Using Heatmap3
 
-We are using `r fN` to visualize these values as a heatmap. We will do this on raw linear values as well as on $\log_{2}$ transformed values.
+We are using `r fN` here to visualize these values as a heatmap. We will do this on raw linear values as well as on $\log_{2}$ transformed values.
 
 
 ```{r hmNoTrafo, fig.height=8, fig.width=8, fig.cap="(ref:hmNoTrafo)", eval=TRUE}
 heatmap3(as.matrix(dat[,2:ncol(dat)]), na.rm = TRUE, margins = c(10,3))
 ```
 (ref:hmNoTrafo) Shown is the visualization of the quantitative matrix as a heatmap (used here are the linear values)
+
+
+Now using $\log_{2}$ transformed values it should actually look better.
+
+
+```{r hmlg2Trafo, fig.height=8, fig.width=8, fig.cap="(ref:hmNoTrafo)", eval=TRUE}
+heatmap3(as.matrix(log2(dat[,2:ncol(dat)])), na.rm = TRUE, margins = c(10,3))
+```
+(ref:hmlg2Trafo) Shown is the visualization of the quantitative matrix as a heatmap using $\log_{2}$ transformed values
 
