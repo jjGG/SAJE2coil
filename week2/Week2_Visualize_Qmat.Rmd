@@ -21,7 +21,7 @@ dat <- read_tsv(fN)
 
 
 
-# Visualize Using Heatmap3
+# Visualize Using Heatmap2 from gplots
 
 We are using `r fN` here to visualize these values as a heatmap. We will do this on raw linear values as well as on $\log_{2}$ transformed values.
 
