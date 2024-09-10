@@ -41,3 +41,14 @@ heatmap.2(lg2mat, na.rm = TRUE, margins = c(10,3), trace="none")
 (ref:hmlg2Trafo) Shown is the visualization of the quantitative matrix as a heatmap using $\log_{2}$ transformed values
 
 Now using $\log_{2}$ transformed values it should actually look better in (ref:hmlg2Trafo). But because there are a lot of zeros, we are replacing these with NAs and removing these before plotting the heatmap.
+
+
+
+
+# Session Information
+
+```{r sessionInfo}
+pander::pander(sessionInfo())
+```
+
+
