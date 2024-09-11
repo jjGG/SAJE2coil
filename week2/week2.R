@@ -6,6 +6,9 @@
 #
 
 # Here we want to plot growth curves depending on different conditions and different populations
+# this R script is for developing 
+# Delivered and shared with the students would only the the Rmd
+
 
 # data structure:
 # Time	OD600_blank_corrected	Strain	Growth_Medium	Replicate	Experiment
@@ -17,7 +20,7 @@
 # 2.500333333	-5.00E-05	Cowan	TSB	1	exp1
 # 3.000416667	0.000375001	Cowan	TSB	1	exp1
 
-# chatgpt: -> cracy! (pdf pasted!)
+# chatgpt: -> crazy! (pdf pasted!)
 # 
 
 library(tidyverse)
