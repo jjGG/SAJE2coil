@@ -1,0 +1,48 @@
+---
+title: "Plotting Growth Curves"
+author: "UZH n UU: Who is the author here"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2: default
+bibliography: bibliography.bib
+---
+
+```{r load libraries, include=TRUE, echo=FALSE}
+library(readr) # this package is for loading files (e.g. tsv, csv, ..)
+
+```
+
+
+# Introduction
+
+The data that we are going to use for this exercise is published in the mBio paper [@niggli2023mbio]. 
+It can be found online on: https://doi.org/10.6084/m9.figshare.23578086.v1
+It describes the OD600 (growth) of the *Staphylococcus aureus* strain **JE2** in different media.
+
+# Reading in Data and Plotting Growth Curves
+
+```{r load data, eval=TRUE, include=FALSE, echo=FALSE}
+fN <- "JE_growth_final.txt" # us this txt file that is copy pasted spread sheet from excel tab separated 
+print(fN)
+```
+
+```{r print data, eval=TRUE, include=TRUE, echo=FALSE}
+print("these are so called junks of code, you may include them to be shown in the rendered document (html here)
+      each junk has a unique name next to it and then some additional arguments")
+print(fN)
+```
+
+
+
+
+
+# Session Information
+
+```{r sessionInfo, echo=FALSE, include=TRUE}
+pander::pander(sessionInfo())
+```
+
+
+# References {-}
+
