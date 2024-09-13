@@ -1,6 +1,6 @@
 ---
 title: "Plotting Growth Curves"
-author: "UZH n UU: Who is the author here"
+author: "UZH n UU: the generic account"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
   bookdown::html_document2: default
