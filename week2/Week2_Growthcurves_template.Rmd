@@ -1,6 +1,6 @@
 ---
 title: "Plotting Growth Curves"
-author: "UZH n UU: Generic Github @jg"
+author: "UZH n UU: Who is the author here"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
   bookdown::html_document2: default
@@ -8,11 +8,9 @@ output:
 bibliography: bibliography.bib
 ---
 
+```{r load libraries, include=TRUE, echo=FALSE}
+library(readr) # this package is for loading files (e.g. tsv, csv, ..)
 
-```{r load libraries, include=FALSE}
-library(readr)
-library(ggplot2)
-library(dplyr)
 ```
 
 
@@ -24,37 +22,16 @@ It describes the OD600 (growth) of the *Staphylococcus aureus* strain **JE2** in
 
 # Reading in Data and Plotting Growth Curves
 
-```{r load data, eval=TRUE, include=FALSE}
-fN <- "JE_growth_final.txt"
-data <- read_tsv(fN)
+```{r load data, eval=TRUE, include=FALSE, echo=FALSE}
+fN <- "JE_growth_final.txt" # us this txt file that is copy pasted spread sheet from excel tab separated 
+print(fN)
 ```
 
-```{r aggreg, eval=TRUE, include=FALSE}
-# aggregate with mean and sd
-aggregated_data2 <- data %>%
-  group_by(Time, Growth_Medium) %>%
-  summarize(
-    mean_OD600 = mean(OD600_blank_corrected, na.rm = TRUE),
-    sd_OD600 = sd(OD600_blank_corrected, na.rm = TRUE)
-  )
-
+```{r print data, eval=TRUE, include=TRUE, echo=FALSE}
+print("these are so called junks of code, you may include them to be shown in the rendered document (html here)
+      each junk has a unique name next to it and then some additional arguments")
+print(fN)
 ```
-
-
-```{r ggplotGrowth, fig.height=8, fig.width=8, fig.cap="(ref:ggplotGrowth)", eval=TRUE}
-
-ggplot(aggregated_data2, aes(x = Time, y = mean_OD600, group = Growth_Medium, color = Growth_Medium)) +
-  geom_line(linewidth = 1) +
-  geom_point() +
-  geom_errorbar(aes(ymin = mean_OD600 - sd_OD600, ymax = mean_OD600 + sd_OD600), width = 0.2) +
-  labs(title = "Aggregated Growth Curve", x = "Time (h)", y = "Mean OD600 (Blank Corrected)") +
-  theme_minimal() +
-  theme(plot.title = element_text(hjust = 0.5)) +
-  scale_color_manual(values = c("blue", "red", "green"))
-
-
-```
-(ref:ggplotGrowth) Shown are the OD600 growth averaged over multiple experiments and replicates in different media conditions.
 
 
 
