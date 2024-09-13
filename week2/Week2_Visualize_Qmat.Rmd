@@ -14,7 +14,7 @@ library(gplots)
 ```
 
 
-```{r load data, eval=TRUE, include=FALSE}
+```{r load data, eval=TRUE, include=FALSE, echo=FALSE}
 fN <- "qmat_1198.txt"
 dat <- read_tsv(fN)
 ```
@@ -47,7 +47,7 @@ Now using $\log_{2}$ transformed values it should actually look better in (ref:h
 
 # Session Information
 
-```{r sessionInfo}
+```{r sessionInfo, eval=TRUE, include=TRUE, echo=FALSE}
 pander::pander(sessionInfo())
 ```
 
