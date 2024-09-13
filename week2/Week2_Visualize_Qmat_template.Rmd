@@ -1,0 +1,50 @@
+---
+title: "Visualize Quantitative Matrix"
+author: "UZH n UU: Who is the author here"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2: default
+bibliography: bibliography.bib
+---
+
+```{r load libraries, include=FALSE}
+library(readr)
+library(gplots)
+```
+
+
+```{r load data, eval=TRUE, include=FALSE}
+fN <- "qmat_1198.txt"
+dat <- read_tsv(fN)
+```
+
+# Visualize Quantitative Matrix
+
+We are using `r fN` here to visualize these values as a heatmap.\
+*Maybe describe here what you are doing to the values before plotting them*\
+*Try also to use references (you may need to expand the bibliography file) and use figure including captions*\
+![This is a screenshot showing where you find the Rmd cheatsheets](../img/CheatsheetsInRStudio.png){width=350px}
+*RStudio has also linked Cheatsheets for Rmarkdown in the Help section*
+
+```{r print data, eval=TRUE, include=TRUE, echo=FALSE}
+print("In print statements you can also describe things directly in the R junks, but usually this is not the best way to do it.")
+print(fN)
+```
+
+Here we try to have a minimal plot with some caption.
+```{r minimalPlot, fig.height=3, fig.width=5, fig.cap="(ref:minimalPlot)", echo=FALSE, include=TRUE}
+plot(1,1, main="A minimal plot with a title")
+```
+(ref:minimalPlot) This plot here is a minimal plot with a caption. It is not very informative, but it is a start.
+
+
+
+
+# Session Information
+
+```{r sessionInfo, echo=FALSE, include=TRUE}
+pander::pander(sessionInfo())
+```
+
+
