@@ -16,7 +16,7 @@ library(gplots)
 
 ```{r load data, eval=TRUE, include=FALSE}
 fN <- "qmat_1198.txt"
-dat <- read_tsv(fN)
+dat <- read_tsv(fN) 
 ```
 
 # Visualize Quantitative Matrix
